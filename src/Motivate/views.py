@@ -44,7 +44,7 @@ def motivatequote(request):
 
 def motivatevideo(request):
 
-	return render(request,"Motivate/motivational-videos.html",{})
+	return render(request,"Motivate/motivational-video.html",{})
 
 
 def motivatestories(request):

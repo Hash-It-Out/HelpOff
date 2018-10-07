@@ -1,9 +1,89 @@
-<!DOCTYPE html>
+{% load static %}
+<!Doctype html>
 <html>
-<head>
-	<title></title>
-</head>
-<body>
-Stories
+	<head>
+
+	</head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<!-- <link rel="stylesheet" href="css/userprofile.css"> -->
+		<link rel="stylesheet" type="text/css" href="{% static 'css/userprofile.css' %}">
+		<!--Import Google Icon Font-->
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+		<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!-- Compiled and minified CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	
+		<!-- Compiled and minified JavaScript --> 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+		<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+
+	<nav style="background-color:rgb(40, 47, 53);">
+	    <div class="nav-wrapper">
+	      <a href="/" class="brand-logo"><i class="material-icons"></i>HelpOff</a>
+	      <ul class="right hide-on-med-and-down">
+	      	<li><a href="https://landbot.io/u/H-87075-Q258RLOP8XUGLXI1/index.html"><i class="material-icons left">chat</i>Chat</a></li>
+	      	<li><a href="{% url 'fun' %}"><i class="material-icons left">insert_emoticon</i>Let's have Fun</a></li>
+	      	<li><a href="{% url 'motivate' %}"><i class="material-icons left">spa</i>Motivate Yourself</a></li>
+	        <li><a href="{% url 'login' %}"><i class="material-icons left">input</i>Login</a></li>
+	       	<li><a href="{% url 'signup' %}"><i class="material-icons left">perm_identity</i>SignUp</a></li>
+	      </ul>
+	    </div>
+	</nav>
+
+
+	<body style="background:linear-gradient(135deg,rgba(74, 189, 120,1) 20%,#52d9e5 80%); !important; ">
+
+
+				<!-- </div> -->
+				<div class="container">
+					<h2 align="center">
+						<small style="color: #fff;">Get some <b>Motivation</b></small>
+					</h2>
+					<div class="row">
+				<div class="col m6">
+					<h2 align="center" style="color: #fff;">1. Everyone Has a Story in Life</h2>
+					<p>
+
+A 24 year old boy seeing out from the train’s window shouted…
+
+“Dad, look the trees are going behind!”
+Dad smiled and a young couple sitting nearby, looked at the 24 year old’s childish behavior with pity, suddenly he again exclaimed…
+
+“Dad, look the clouds are running with us!”
+
+The couple couldn’t resist and said to the old man…
+
+“Why don’t you take your son to a good doctor?” The old man smiled and said…“I did and we are just coming from the hospital, my son was blind from birth, he just got his eyes today.”
+
+Every single person on the planet has a story. Don’t judge people before you truly know them. The truth might surprise you.
+				</p>
+		  		</div>
+				<div class="col m6">		  		
+					<h2 align="center" style="color: #fff;">2. Shake off Your Problems</h2>
+
+<p>A man’s favorite donkey falls into a deep precipice. He can’t pull it out no matter how hard he tries. He therefore decides to bury it alive.
+
+Soil is poured onto the donkey from above. The donkey feels the load, shakes it off, and steps on it. More soil is poured.
+
+It shakes it off and steps up. The more the load was poured, the higher it rose. By noon, the donkey was grazing in green pastures.
+
+After much shaking off (of problems) And stepping up (learning from them), One will graze in GREEN PASTURES.
+				</p>
+			</div>
+					</div>
+				</div>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
 </body>
 </html>
