@@ -22,7 +22,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
 from .views import home_page,contact,login_user,signup_user,logout_user,index
-
+from Motivate.views import chat,fun,motivate
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,7 +31,9 @@ urlpatterns = [
     url(r'^signup/$', signup_user, name="signup"),
     url(r'^home/$', home_page, name="home"),
     url(r'^logout/$', logout_user, name="logout"),
-	url(r'^contact$', contact),
+	url(r'^chat$', chat),
+	url(r'^fun$', fun),
+	url(r'^motivate$', motivate),
 ]
 
 if settings.DEBUG:
