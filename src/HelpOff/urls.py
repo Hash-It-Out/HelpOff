@@ -22,7 +22,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
 from .views import home_page,contact,login_user,signup_user,logout_user,index
-from Motivate.views import chat,fun,motivate,motivatequote,motivatevideo,motivatestories,contact_us
+from Motivate.views import fun,motivate,motivatequote,motivatevideo,motivatestories,contact_us
 
 urlpatterns = [
     path('admin/', admin.site.urls),
