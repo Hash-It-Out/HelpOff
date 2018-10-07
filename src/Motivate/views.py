@@ -6,9 +6,6 @@ import json
 
 # Create your views here.
 from pprint import pprint
-def chat(request):
-
-	return render(request,"Motivate/chat.html",{})
 
 def fun(request):
 	link = "https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_joke"
@@ -25,6 +22,16 @@ def fun(request):
 def motivate(request):
 
 	return render(request,"Motivate/Motivate.html",{})
+
+def motivatequote(request):
+	link = "http://inspirobot.me/api?generate=true"
+	source_code = requests.get(link)
+	plain_text = source_code.text
+	context = {
+    	'img':plain_text,
+    }
+
+	return render(request,"Motivate/motivationalquotes.html",context)
 
 def contact_us(request):
 	consultant=[
@@ -58,6 +65,7 @@ def contact_us(request):
 		average_tones=result['document_tone']['tones']
 		
 		maximum=0
+		print(average_tones)
 		final_tone={}
 		for i in average_tones:
 			if(i['score']>maximum and (i['tone_name']=='Sadness' or i['tone_name']=='Anger' or i['tone_name']=='Fear')):
