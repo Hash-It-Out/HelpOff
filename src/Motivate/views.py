@@ -1,5 +1,9 @@
 from django.shortcuts import render
 from .tone import ToneAnalyze
+from bs4 import BeautifulSoup
+import requests
+import json
+
 # Create your views here.
 from pprint import pprint
 def chat(request):
@@ -7,8 +11,16 @@ def chat(request):
 	return render(request,"Motivate/chat.html",{})
 
 def fun(request):
-
-	return render(request,"Motivate/fun.html",{})
+	link = "https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_joke"
+	source_code = requests.get(link)
+	plain_text = source_code.text
+	a = json.loads(plain_text)
+	print(a['setup']+ "\n"+a['punchline'])
+	context = {
+    	'setup':a['setup'],
+    	'punchline':a['punchline']
+    }
+	return render(request,"Motivate/fun.html",context)
 
 def motivate(request):
 
