@@ -14,5 +14,4 @@ def motivate(request):
 	return render(request,"Motivate/motivate.html",{})
 
 def contactUs(request):
-
-	
+	return 
