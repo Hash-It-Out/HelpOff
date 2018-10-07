@@ -22,7 +22,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
 from .views import home_page,contact,login_user,signup_user,logout_user,index
-from Motivate.views import chat,fun,motivate
+from Motivate.views import chat,fun,motivate,motivatequote
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,6 +34,7 @@ urlpatterns = [
 	url(r'^chat$', chat, name="chat"),
 	url(r'^fun$', fun, name="fun"),
 	url(r'^motivate$', motivate, name="motivate"),
+	url(r'^motivational-quotes$', motivatequote, name="motivational-quotes")
 ]
 
 if settings.DEBUG:
