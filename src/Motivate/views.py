@@ -1,12 +1,11 @@
 from django.shortcuts import render
+from .tone import ToneAnalyze
 from bs4 import BeautifulSoup
 import requests
 import json
 
 # Create your views here.
-def chat(request):
-
-	return render(request,"Motivate/chat.html",{})
+from pprint import pprint
 
 def fun(request):
 	
@@ -42,6 +41,7 @@ def motivatequote(request):
 
 	return render(request,"Motivate/motivationalquotes.html",context)
 
+
 def motivatevideo(request):
 
 	return render(request,"Motivate/motivational-videos.html",{})
@@ -50,3 +50,51 @@ def motivatevideo(request):
 def motivatestories(request):
 
 	return render(request,"Motivate/motivational-stories.html",{})
+
+def contact_us(request):
+	consultant=[
+		{
+			"name":"Devansh",
+			"email":"devanshslnk98@gmail.com",
+			"contact":999,
+			"speciality":"Fear"
+		},
+		{
+			"name":"consultant2",
+			"email":"priyamshah112@gmail.com",
+			"contact":991,
+			"speciality":"Anger"
+		},
+		{
+			"name":"consultant3",
+			"email":"priyams972@gmail.com",
+			"contact":990,
+			"speciality":"Sadness"
+
+		}
+	]
+	if(request.method=="POST"):
+		first_name=request.POST.get("firt_name")
+		last_name=request.POST.get("last_name")
+		email=request.POST.get("mail")
+		subject=request.POST.get("subject")
+		message=request.POST.get("message")
+		result=ToneAnalyze.analyze(message)
+		average_tones=result['document_tone']['tones']
+		
+		maximum=0
+		print(average_tones)
+		final_tone={}
+		for i in average_tones:
+			if(i['score']>maximum and (i['tone_name']=='Sadness' or i['tone_name']=='Anger' or i['tone_name']=='Fear')):
+				final_tone=i
+		if(final_tone['tone_name']=="Sadness"):
+			return render(request,"Motivate/consultant.html",consultant[2])
+		elif(final_tone['tone_name']=="Fear"):
+			return render(request,"Motivate/consultant.html",consultant[0])
+		else:
+			return render(request,"Motivate/consultant.html",consultant[1])
+		
+
+
+

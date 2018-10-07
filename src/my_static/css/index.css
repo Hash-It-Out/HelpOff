@@ -19,6 +19,8 @@ body, html{
 	background-attachment:fixed;
 }
 
+
+
 .pimg1{
 	background-image:url('../img/image1-2.jpg');
 	min-height:100%;
@@ -53,20 +55,22 @@ body, html{
 
 .section{
 	text-align:center;
-	padding:50px 80px;
+	
 	height: 100%;
 	/*position: relative;*/
 }
 
 .section-white{
-	background-color:white;
-	color:rgb(40, 47, 53);
+  background:linear-gradient(135deg,rgba(74, 189, 120,1) 20%,#52d9e5 80%);
+  color:rgb(40, 47, 53);
 }
 .section-light{
 	background-color:rgb(40, 47, 53);
 	color: white;
 }
-
+.section2{
+  background-color:rgba(74, 189, 120,1);
+}
 .ptext{
 	position:absolute;
 	top:35%;
