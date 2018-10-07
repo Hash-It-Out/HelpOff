@@ -25,7 +25,6 @@
 
 		<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
-	<body>
 	  <nav style="background-color: rgba(33,37,41, 0.35);">
 	    <div class="nav-wrapper">
 	      <a href="/" class="brand-logo"><i class="material-icons"></i>HelpOff</a>
@@ -38,24 +37,58 @@
 	      </ul>
 	    </div>
 	  </nav>
+	<body style="background:linear-gradient(135deg,rgba(74, 189, 120,1) 20%,#52d9e5 80%); !important; ">
 
 
-			
-	<div class="container">
+
+	
+	<div class="container" >
 		<div class="col s12 ">
-			<h2 class="header" style="text-align: center;">Jokes</h2>
+			<h2 class="header" style="text-align: center;color: #fff;">Jokes</h2>
 			</div>
 				</div>
 				<!-- </div> -->
 				<div class="container">
-					<div style="float: left;">
-					<p><b>{{ setup }}<b></p>
-					<p><b>{{ setup }}<b></p>
+					<div class="row">
+					<div class="col">
 					</div>
-					<div style="float: left; margin-left: 20%;margin-top: 20%;">
+					<div class="row">
+					<div class="col-md-6">
+				  	<div style="float: left;">
+				  	<h2 style="text-align: center;color: #fff;">Joke</h2>
+				  	{% for x in joke  %}
+				  						  		
+				    
+				    <div class="collapsible-header" >{{ x }}</div>
+				    
+				    {% endfor %}
+					</div>
+					</div>
+					
+					
+				    <div class="col-md-6">
+				    
+				    <div style="float: left;">
+				  	<h2 style="text-align: center;color: #fff"> PunchLine </h2>
+				  	{% for x in answer  %}
+
+				      <div class="collapsible-header" style="background-color: #f8f8f8;">{{ x }}</div>
+				    
+				    {% endfor %}
+				  	</div>
+				    </div>
+				</div>
+				    <div class="col">
+				    </div>
+					</div>
+
+				  
+				
+				<div style="text-align: center;">
 				<form   method="POST"> {% csrf_token %}
-				<button class="btn waves-effect waves-light" type="submit" name="action" style="width: 100%" >Need One More!</button>	
+				<button class="btn waves-effect waves-light" type="submit" name="action" style="width:100%" >Need One More!</button>	
 				</form>
+				</div>
 				</div>
 				</div>
 
@@ -65,6 +98,17 @@
 		
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+	<script type="text/javascript">
+		  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems, options);
+  });
 
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+	</script>
 </body>
 </html>

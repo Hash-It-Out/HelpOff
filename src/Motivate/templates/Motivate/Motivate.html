@@ -25,35 +25,39 @@
 
 		<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
-	<body>
-	<div class="navbar-fixed">
-		<nav style="background-color: #fff">
-			<div class="nav-wrapper">
-				<a href="#" class="brand-logo center" style="color:#000;font-family: 'Lobster', cursive;">HelpOff</a>
-				
-			</div>
-		</nav>
+
+	  <nav style="background-color: rgba(33,37,41, 0.35);">
+	    <div class="nav-wrapper">
+	      <a href="/" class="brand-logo"><i class="material-icons"></i>HelpOff</a>
+	      <ul class="right hide-on-med-and-down">
+	      	<li><a href="{% url 'chat' %}"><i class="material-icons left">chat</i>Chat</a></li>
+	      	<li><a href="{% url 'fun' %}"><i class="material-icons left">insert_emoticon</i>Let's have Fun</a></li>
+	      	<li><a href="{% url 'motivate' %}"><i class="material-icons left">spa</i>Motivate Yourself</a></li>
+	        <li><a href="{% url 'login' %}"><i class="material-icons left">input</i>Login</a></li>
+	       	<li><a href="{% url 'signup' %}"><i class="material-icons left">perm_identity</i>SignUp</a></li>
+	      </ul>
+	    </div>
+	  </nav>
+
+	<body style="background:linear-gradient(135deg,rgba(74, 189, 120,1) 20%,#52d9e5 80%); !important; ">
+
 
 			
 	<div class="container">
 		<div class="col s12 ">
-			<h2 class="header">{{ username }}</h2>
+			
 			</div>
 				</div>
 				<!-- </div> -->
 				<div class="container">
-					<h2>
-						<small>Get some <b>M</b>otivation</small>
+					<h2 align="center">
+						<small style="color: #fff;">Get some <b>Motivation</b></small>
 					</h2>
 					<div class="row">
-					    <div class="col s12 m6 offset-m4">					  
-							  <button>Motivational Quotes</button>
-							  <button>Jokes</button>
-							  <button>Motivational Videos</button>
-							  <button>Motivational Stories</button>
-			  <a href="{% url 'motivational-quotes' %}">
+			  <div class="col m4">
+			  <a href="{% url 'motivational-quotes' %}" >
 			  <div class="row">
-			    <div class="col s12 m7">
+			    <div class="col">
 			      <div class="card">
 			        <div class="card-image">
 			          <img src="{% static 'img/image1-2.jpg' %}">
@@ -63,11 +67,11 @@
 			    </div>
 			  </div>				
 			</a>
-
-
-			  <a href="{% url 'fun' %}">
+		</div>
+				<div class="col m4">
+			  <a href="{% url 'fun' %}" style="display: inline-block;">
 			  <div class="row">
-			    <div class="col s12 m7">
+			    <div class="col">
 			      <div class="card">
 			        <div class="card-image">
 			          <img src="{% static 'img/image1-2.jpg' %}">
@@ -77,7 +81,37 @@
 			    </div>
 			  </div>				
 			</a>
+		</div>
+				<div class="col m4">
+			  <a href="{% url 'motivational-videos' %}" style="display: inline-block;">
+			  <div class="row">
+			    <div class="col">
+			      <div class="card">
+			        <div class="card-image">
+			          <img src="{% static 'img/image1-2.jpg' %}">
+			          <span class="card-title">Motivational Videos</span>
+			        </div>
+			      </div>
+			    </div>
+			  </div>				
+			</a>
+		</div>
 
+
+			<div class="col m4">
+			  <a href="{% url 'motivational-stories' %}" style="display: inline-block;">
+			  <div class="row">
+			    <div class="col ">
+			      <div class="card">
+			        <div class="card-image">
+			          <img src="{% static 'img/image1-2.jpg' %}">
+			          <span class="card-title">Motivational Stories</span>
+			        </div>
+			      </div>
+			    </div>
+			  </div>				
+			</a>			
+		</div>
 
 						</div>
 				</div>
