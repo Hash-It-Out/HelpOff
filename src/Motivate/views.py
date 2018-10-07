@@ -11,8 +11,5 @@ def fun(request):
 
 def motivate(request):
 
-	return render(request,"Motivate/motivate.html",{})
+	return render(request,"Motivate/Motivate.html",{})
 
-def contactUs(request):
-
-	
