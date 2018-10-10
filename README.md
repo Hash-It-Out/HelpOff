@@ -7,7 +7,7 @@
 
 By
 
-Devansh Solanki 
+Devansh Solanki <br>
 Priyam Shah
 
 
